@@ -1,9 +1,6 @@
 $(document).ready(function(){
 	
 	
-	
-	
-	
 	var totalCount=0;
 	var countPerPage=7;
 	
@@ -20,11 +17,6 @@ $(document).ready(function(){
 	$('#go-add-item-btn').click(function(){
 		location.href='./add-item';
 	});
-	
-	
-	
-	
-	
 	
 	
 	$.ajax({

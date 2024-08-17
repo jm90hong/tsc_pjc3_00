@@ -29,15 +29,12 @@ public class ItemController {
 	@GetMapping("findBySearchCount")
 	public int findBySearchCount(
 				@RequestParam(value="type",defaultValue = "") String item_type,
-				@RequestParam(value="name",defaultValue = "") String item_name,
-				@RequestParam(value="code",defaultValue = "") String item_code
+				@RequestParam(value="word",defaultValue = "") String word
 			) {
 		
 		Item i = new Item();
 		i.setItem_type(item_type);
-		i.setItem_name(item_name);
-		i.setItem_code(item_code);
-		
+		i.setItem_sch_word(word);
 		
 		int count = itemService.findBySearchCount(i);
 		
@@ -48,8 +45,7 @@ public class ItemController {
 	@GetMapping("findBySearch")
 	public List<Item> findBySearch(
 				@RequestParam(value="type",defaultValue = "") String item_type,
-				@RequestParam(value="name",defaultValue = "") String item_name,
-				@RequestParam(value="code",defaultValue = "") String item_code,
+				@RequestParam(value="word",defaultValue = "") String word,
 				@RequestParam(value="start") int start,
 				@RequestParam(value="count") int count
 				
@@ -59,8 +55,7 @@ public class ItemController {
 		
 		Item i = new Item();
 		i.setItem_type(item_type);
-		i.setItem_name(item_name);
-		i.setItem_code(item_code);
+		i.setItem_sch_word(word);
 		i.setStart(start);
 		i.setCount(count);
 		

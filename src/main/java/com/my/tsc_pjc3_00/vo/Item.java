@@ -10,6 +10,8 @@ public class Item {
 	private String item_process = null;
 	private String item_content = null;
 	private String item_created_date = null;
+	private String item_sch_word=null;
+	
 	
 	private int user_idx=0;
 	
@@ -21,6 +23,12 @@ public class Item {
 	
 
 	
+	public String getItem_sch_word() {
+		return item_sch_word;
+	}
+	public void setItem_sch_word(String item_sch_word) {
+		this.item_sch_word = item_sch_word;
+	}
 	public int getStart() {
 		return start;
 	}

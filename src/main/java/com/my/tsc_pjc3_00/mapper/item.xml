@@ -5,32 +5,28 @@
 
 	<select id="findBySearchCount" parameterType="Item" resultType="Integer">
 	    select count(*) from item
-	    <trim prefix="WHERE" prefixOverrides="AND |OR ">
+	    <trim prefix="WHERE" prefixOverrides="AND | OR ">
 	        <if test="item_type != null and item_type != ''">
 	            AND item_type = #{item_type}
 	        </if>
-	        <if test="item_code != null and item_code != ''">
-	            AND item_code like CONCAT('%', #{item_code}, '%')
-	        </if>
-	        <if test="item_name != null and item_name != ''">
-	            AND item_name like CONCAT('%', #{item_name}, '%')
-	        </if>
+	        <if test="item_sch_word != null and item_sch_word != ''">
+	            AND item_sch_word like CONCAT('%', #{item_sch_word}, '%') 
+        	</if>
+	       
 	    </trim>
 	</select>
 
 
 	<select id="findBySearch" parameterType="Item" resultType="Item">
 	    select * from item
-	    <trim prefix="WHERE" prefixOverrides="AND |OR ">
+	    <trim prefix="WHERE" prefixOverrides="AND | OR ">
 	        <if test="item_type != null and item_type != ''">
 	            AND item_type = #{item_type}
 	        </if>
-	        <if test="item_code != null and item_code != ''">
-	            AND item_code like CONCAT('%', #{item_code}, '%')
-	        </if>
-	        <if test="item_name != null and item_name != ''">
-	            AND item_name like CONCAT('%', #{item_name}, '%')
-	        </if>
+	        <if test="item_sch_word != null and item_sch_word != ''">
+	            AND item_sch_word like CONCAT('%', #{item_sch_word}, '%') 
+        	</if>
+	       
 	    </trim>
 	    limit #{start},#{count}
 	</select>

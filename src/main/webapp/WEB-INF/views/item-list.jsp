@@ -83,13 +83,13 @@
 				<div>
 				
 					<div align="center" style="margin-bottom:20px;">
-						<input placeholder="코드 혹은 품명"/>
-						<select>
+						<input id="sch-word" placeholder="코드 혹은 품명"/>
+						<select id="sch-type">
 							<option value="원자재">원자재</option>
 							<option value="상품">상품</option>
 							<option value="부자재">부자재</option>
 						</select>
-						<button>검색하기</button>
+						<button id="sch-btn">검색하기</button>
 					</div>
 				
 				
