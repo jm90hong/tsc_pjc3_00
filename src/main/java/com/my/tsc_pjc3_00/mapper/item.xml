@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="item">
+
+
+	<select id="findBySearchCount" parameterType="Item" resultType="Integer">
+	    select count(*) from item
+	    <trim prefix="WHERE" prefixOverrides="AND |OR ">
+	        <if test="item_type != null and item_type != ''">
+	            AND item_type = #{item_type}
+	        </if>
+	        <if test="item_code != null and item_code != ''">
+	            AND item_code like CONCAT('%', #{item_code}, '%')
+	        </if>
+	        <if test="item_name != null and item_name != ''">
+	            AND item_name like CONCAT('%', #{item_name}, '%')
+	        </if>
+	    </trim>
+	</select>
+
+
+	<select id="findBySearch" parameterType="Item" resultType="Item">
+	    select * from item
+	    <trim prefix="WHERE" prefixOverrides="AND |OR ">
+	        <if test="item_type != null and item_type != ''">
+	            AND item_type = #{item_type}
+	        </if>
+	        <if test="item_code != null and item_code != ''">
+	            AND item_code like CONCAT('%', #{item_code}, '%')
+	        </if>
+	        <if test="item_name != null and item_name != ''">
+	            AND item_name like CONCAT('%', #{item_name}, '%')
+	        </if>
+	    </trim>
+	    limit #{start},#{count}
+	</select>
+	
+	<select id="findByItemIdx"  parameterType="Integer" resultType="Item">
+		SELECT * FROM  item
+		WHERE item_idx = #{item_idx}
+	</select>
+	
+	<select id="findCount" resultType="Integer">
+		select count(*) from item
+	</select>
+	
+	
+	<select id="findPart"  parameterType="HashMap" resultType="Item">
+		select * from item
+		order by item_idx desc
+		limit #{start},#{count}
+	</select>
+	
+	
+	<select id="findAll" resultType="Item">
+		select * from item
+	</select>
+	
+	
+	
+	<insert id="save" parameterType="Item">
+		insert into `item`
+		(
+			item_code,
+			user_idx,
+			item_name,
+			item_img,
+			item_type,
+			item_process,
+			item_content,
+			item_created_date
+		)
+		values
+		(
+			#{item_code},
+			#{user_idx},
+			#{item_name},
+			#{item_img},
+			#{item_type},
+			#{item_process},
+			#{item_content},
+			sysdate()
+		)
+	</insert>
+	
+</mapper>
+
+

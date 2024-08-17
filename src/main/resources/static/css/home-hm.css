@@ -1,0 +1,134 @@
+
+
+.hm-list-container{
+	display: flex;
+	flex-wrap: wrap;
+}
+
+
+.board-box{
+	width:250px;
+	padding:10px;
+	cursor: pointer;
+	border-radius:8px;
+}
+
+.board-box:hover{
+	background: #f2f2f2;
+}
+
+
+.board-box > div{
+	width:100%;
+	height:100%;
+	display:flex;
+	flex-direction: column;
+}
+
+
+.board-box .img-box{
+	width:100%;
+	height:200px;
+	position: relative;
+}
+
+
+.board-box .img-box .tag{
+	position: absolute;
+	left: 0;
+	top: 0;
+	background: rgba(0,0,0,0.5);
+	padding: 3px 10px;
+	border-radius: 6px;
+	color:#1DEB00;
+	font-size: 13px;
+	font-weight: 700;
+}
+
+.board-box .img-box .tag.none{
+	display: none;
+}
+
+
+.board-box img.main-img{
+	width:100%;
+	height:100%;
+	object-fit:cover;
+	border-radius:5px;
+}
+
+.board-box .t1{
+	color:#000;
+	font-weight:700;
+	font-size:14px;
+	margin-top:6px;
+	margin-bottom:5px;
+}
+
+.board-box .t2{
+	color:#585858;
+	font-weight:700;
+	font-size:13px;
+	margin-bottom:8px;
+}
+
+
+.board-box .t3{
+	color:#999;
+	font-weight:700;
+	font-size:13px;
+}
+
+
+.board-box .t4{
+	color:#999;
+	font-weight:700;
+	font-size:12px;
+}
+
+
+button.hm-add-board-btn{
+	height:32px;
+	width:100px;
+	cursor:pointer;
+	background:var(--main-color);
+	font-weight:700;
+	color:#fff;
+	border:1px solid #dedede;
+	border-radius:8px;
+	margin-right:10%;
+}
+
+
+
+
+
+.hm-more-btn{
+	margin:0 auto;
+	display: block;
+	margin-bottom: 100px;
+	width:200px;
+	padding:10px;
+	border:1px solid #dedede;
+	background: #222;
+	color:#fff;
+	font-weight:700;
+	cursor: pointer;
+	border-radius:16px;
+}
+
+.hm-more-btn:hover{
+	background: #000;
+}
+
+
+
+
+
+
+
+
+
+
+
+
